@@ -1,0 +1,18 @@
+queue:
+  # Players per team for the public queue (1 = solo, 2 = doubles, 3 = trios)
+  team-size: 1
+
+game:
+  end-delay-seconds: 5
+  # Leave empty to use the spawn of the server's default world
+  lobby-world: ""
+
+# How BedFight talks to the minestormparty plugin (via reflection, so no compile-time dependency).
+# Adjust the method names to match the real minestormparty API.
+hook:
+  manager-methods: [getPartyManager, getManager]
+  get-party-methods: [getParty, getPlayerParty, getPartyByPlayer, getPartyOf]
+  members-methods: [getMembers, getPlayers, getOnlineMembers]
+  # Optional: methods on the manager with signature (List<Player>, int teamSize) that return the split teams.
+  # If empty or failing, BedFight shuffles and splits players itself.
+  split-methods: []

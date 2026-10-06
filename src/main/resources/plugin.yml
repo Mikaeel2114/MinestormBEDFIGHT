@@ -1,0 +1,22 @@
+name: BedFight
+main: dev.bedfight.BedFightPlugin
+version: ${project.version}
+description: BedFight minigame with minestormparty integration
+author: BedFight
+depend: [minestormparty]
+
+commands:
+  bedfight:
+    description: BedFight queue, private matches and arena setup
+    usage: /bedfight [private|leave|setuparena|po1|po2|setspawn|createteam|setteam|setbed|buildmode|save]
+
+permissions:
+  bedfight.play:
+    description: Join the BedFight queue
+    default: true
+  bedfight.admin:
+    description: Arena setup commands
+    default: op
+  bedfight.rank.mvpplusplus:
+    description: MVP++ rank - may create private matches
+    default: false
